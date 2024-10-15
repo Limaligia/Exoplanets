@@ -43,13 +43,13 @@ function animateSimulation(properties) {
     // Função para desenhar a zona de habitabilidade como uma rosquinha (faixa)
     function drawHabitabilityZone() {
         // Desenhar o limite externo da zona habitável
-        ctx.fillStyle = 'rgba(0, 255, 0, 0.2)'; // Transparência ajustada para 0.5
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
         ctx.beginPath();
         ctx.ellipse(canvas.width / 2, canvas.height / 2, habitabilityOuter, habitabilityOuter / 2, 0, 0, Math.PI * 2);
         ctx.fill();
 
         // Desenhar o centro da zona habitável com a mesma cor do fundo
-        ctx.fillStyle = '#ffffff'; // Cor sólida do fundo (preto)
+        ctx.fillStyle = '#ffffff'; // Cor sólida do fundo (exemplo: preto)
         ctx.beginPath();
         ctx.ellipse(canvas.width / 2, canvas.height / 2, habitabilityInner, habitabilityInner / 2, 0, 0, Math.PI * 2);
         ctx.fill();
@@ -99,17 +99,17 @@ function animateSimulation(properties) {
 
         // Desenhar o planeta
         const planetSize = 5 + albedo * 5; // O tamanho do planeta é influenciado pelo albedo
-        ctx.fillStyle = rgba(0, 0, 255, ${1 - profundidadeTransito / 100}); // Cor com base na profundidade de trânsito
+        ctx.fillStyle = `rgba(0, 0, 255, ${1 - profundidadeTransito / 100})`; // Cor com base na profundidade de trânsito
         ctx.beginPath();
         ctx.arc(planetX, planetY, planetSize, 0, Math.PI * 2);
         ctx.fill();
 
         // Atualizar o ângulo para mover o planeta
-        angle += speed * (1 + (1361 * grauInsolacao) / 1000); // A velocidade de rotação aumenta com a insolação
+        angle += speed * (1 + 1361*grauInsolacao / 1000); // A velocidade de rotação aumenta com a insolação
 
         // Repetir a animação
         requestAnimationFrame(draw);
     }
 
     draw(); // Iniciar a animação
-} 
+}
