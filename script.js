@@ -105,7 +105,7 @@ function animateSimulation(properties) {
         ctx.fill();
 
         // Atualizar o ângulo para mover o planeta
-        angle += speed * (1 + grauInsolacao / 1000); // A velocidade de rotação aumenta com a insolação
+        angle += speed * (1 + (1361 * grauInsolacao) / 1000); // A velocidade de rotação aumenta com a insolação
 
         // Repetir a animação
         requestAnimationFrame(draw);
