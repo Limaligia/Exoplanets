@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="author" content="Lígia Mara de Oliveira Lima & João Pedro Iung Perin & chat GPT">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Exoplaneta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simulador Animado de Exoplanetas</h1>
+    <form id="exoplanet-form">
+        <label>Excentricidade (0 a 1):
+            <input type="number" name="excentricidade" min="0" max="1" step="0.01" required>
+        </label>
+        <label>Período Orbital (dias):
+            <input type="number" name="periodoOrbital" step="0.000001" required>
+        </label>
+        <label>Amplitude da Variação da Velocidade Radial (K):
+            <input type="number" name="amplitudeK" step="0.000001" required>
+        </label>
+        <label>Massa da Estrela (massa solar):
+            <input type="number" name="massaEstrela" step="0.000001" required>
+        </label>
+        <label>Raio da Estrela (raios solares):
+            <input type="number" name="raioEstrela" step="0.000001" required>
+        </label>
+        <label>Temperatura da Estrela (K):
+            <input type="number" name="tempEstrela" step="0.000001" required>
+        </label>
+        <label>Albedo (0 a 1):
+            <input type="number" name="albedo" min="0" max="1" step="0.000001" required>
+        </label>
+        <label>Profundidade de Trânsito (%):
+            <input type="number" name="profundidadeTransito" step="0.000001" required>
+        </label>
+        <label>Semieixo Maior do Baricentro (UA):
+            <input type="number" name="semiEixoBaricentro" step="0.000001" required>
+        </label>
+        <label>Semieixo Maior do Planeta (UA):
+            <input type="number" name="semiEixoPlaneta" step="0.000001" required>
+        </label>
+        <label>Massa do Planeta (massa de Júpiter):
+            <input type="number" name="massaPlaneta" step="0.000001" required>
+        </label>
+        <label>Raio do Planeta (raios de Júpiter):
+            <input type="number" name="raioPlaneta" step="0.000001" required>
+        </label>
+        <label>Probabilidade de Trânsito (%):
+            <input type="number" name="probabilidadeTransito" min="0" max="100" step="0.000001" required>
+        </label>
+        <label>Tempo de Trânsito (horas):
+            <input type="number" name="tempoTransito" step="0.000001" required>
+        </label>
+        <label>Grau de Insolação (W/m²):
+            <input type="number" name="grauInsolacao" step="0.000001" required>
+        </label>
+        <label>Temperatura de Equilíbrio (K):
+            <input type="number" name="tempEquilibrio" step="0.000001" required>
+        </label>
+        <label for="habitabilityInner">Limite Interno da Zona Habitável (UA):
+            <input type="number" id="habitabilityInner" name="habitabilityInner" step="0.000001" required>
+        </label>
+        <label for="habitabilityOuter">Limite Externo da Zona Habitável (UA):
+            <input type="number" id="habitabilityOuter" name="habitabilityOuter" step="0.000001" required>
+        </label>
+        <button type="submit">Simular</button>
+    
+    <canvas id="simulation-canvas" width="600" height="400"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
