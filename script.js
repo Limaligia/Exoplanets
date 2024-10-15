@@ -5,6 +5,10 @@ document.getElementById('exoplanet-form').addEventListener('submit', function(ev
     const properties = Object.fromEntries(formData);
     
     animateSimulation(properties);
+
+    // Rolar para a área de animação
+    const simulationCanvas = document.getElementById('simulation-canvas');
+    simulationCanvas.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 function animateSimulation(properties) {
